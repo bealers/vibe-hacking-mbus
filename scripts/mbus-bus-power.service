@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable M-Bus HAT 36V bus power via GPIO 26
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/gpioset -c /dev/gpiochip0 -z 26=1
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
