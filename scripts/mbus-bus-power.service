@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/gpioset -c /dev/gpiochip0 -z 26=1
+ExecStart=/bin/sh -c 'gpioset -c /dev/gpiochip0 26=1; sleep infinity'
 Restart=on-failure
 RestartSec=5
 
